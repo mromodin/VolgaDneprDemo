@@ -1,1 +1,5 @@
-/.metadata/
+.metadata/
+.tmp/
+santens_3pl_deploy/target/
+santens_3pl_registry/target/*
+santens_3pl_registry/*/.meta/*
