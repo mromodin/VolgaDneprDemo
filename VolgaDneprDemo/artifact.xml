@@ -2,4 +2,13 @@
     <artifact name="rest_api_send_person" groupId="ru.IBS.VolgaDneprDemo.api" version="1.0.0" type="synapse/api" serverRole="EnterpriseServiceBus">
         <file>src/main/synapse-config/api/rest_api_send_person.xml</file>
     </artifact>
+    <artifact name="ms_person" groupId="ru.IBS.VolgaDneprDemo.message-store" version="1.0.0" type="synapse/message-store" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-stores/ms_person.xml</file>
+    </artifact>
+    <artifact name="seg_handler" groupId="ru.IBS.VolgaDneprDemo.sequence" version="1.0.0" type="synapse/sequence" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/sequences/seg_handler.xml</file>
+    </artifact>
+    <artifact name="mp_person" groupId="ru.IBS.VolgaDneprDemo.message-processors" version="1.0.0" type="synapse/message-processors" serverRole="EnterpriseServiceBus">
+        <file>src/main/synapse-config/message-processors/mp_person.xml</file>
+    </artifact>
 </artifacts>

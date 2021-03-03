@@ -3,6 +3,7 @@
     <resource methods="POST">
         <inSequence>
             <property name="messageType" scope="axis2" type="STRING" value="application/xml"/>
+            <store description="" messageStore="ms_person"/>
             <respond/>
         </inSequence>
         <outSequence/>
