@@ -6,7 +6,7 @@
             <sequence>
                 <switch description="" source="//item/TargetDB">
                     <case regex="MSSQL">
-                        <dbreport>
+                        <dbreport description="MSSQL">
                             <connection>
                                 <pool>
                                     <dsName>DS_MSSQL</dsName>
@@ -18,7 +18,7 @@
                                 <parameter expression="//item/FirstName" type="VARCHAR"/>
                                 <parameter expression="//item/Surname" type="VARCHAR"/>
                                 <parameter expression="//item/Patronymic" type="VARCHAR"/>
-                                <parameter expression="//item/Age" type="VARCHAR"/>
+                                <parameter expression="//item/Age" type="INTEGER"/>
                             </statement>
                         </dbreport>
                     </case>
