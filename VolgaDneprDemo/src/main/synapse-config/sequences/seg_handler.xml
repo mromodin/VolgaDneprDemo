@@ -1,5 +1,31 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <sequence name="seg_handler" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
     <log level="full"/>
+    <iterate continueParent="true" expression="//item" sequential="true">
+        <target>
+            <sequence>
+                <switch description="" source="//item/TargetDB">
+                    <case regex="MSSQL">
+                        <dbreport description="MSSQL">
+                            <connection>
+                                <pool>
+                                    <dsName>DS_MSSQL</dsName>
+                                </pool>
+                            </connection>
+                            <statement>
+                                <sql><![CDATA[INSERT INTO [dbo].[Employees]([TargetDB],[FirstName],[Surname],[Patronymic],[Age]) VALUES(?,?,?,?,?)]]></sql>
+                                <parameter expression="//item/TargetDB" type="VARCHAR"/>
+                                <parameter expression="//item/FirstName" type="VARCHAR"/>
+                                <parameter expression="//item/Surname" type="VARCHAR"/>
+                                <parameter expression="//item/Patronymic" type="VARCHAR"/>
+                                <parameter expression="//item/Age" type="INTEGER"/>
+                            </statement>
+                        </dbreport>
+                    </case>
+                    <default/>
+                </switch>
+            </sequence>
+        </target>
+    </iterate>
     <drop/>
 </sequence>
